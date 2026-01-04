@@ -1,0 +1,51 @@
+# Build directories
+build/
+cmake-build-*/
+out/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# Compiled binaries
+image_classifier
+*.exe
+*.out
+*.app
+
+# Object files
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Model files (large binary files)
+*.pt
+*.pth
+*.onnx
+
+# Test images and data
+test_images/
+data/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
