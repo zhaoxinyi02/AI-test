@@ -49,3 +49,6 @@ data/
 tmp/
 temp/
 *.tmp
+
+# CodeQL analysis
+_codeql_detected_source_root
