@@ -41,7 +41,16 @@ ProgramArgs parseArguments(int argc, char* argv[]) {
         } else if ((arg == "-l" || arg == "--labels") && i + 1 < argc) {
             args.labels_path = argv[++i];
         } else if ((arg == "-k" || arg == "--topk") && i + 1 < argc) {
-            args.top_k = std::stoi(argv[++i]);
+            try {
+                args.top_k = std::stoi(argv[++i]);
+                if (args.top_k <= 0) {
+                    std::cerr << "Warning: top-k must be positive, using default value (5)" << std::endl;
+                    args.top_k = 5;
+                }
+            } catch (const std::exception& e) {
+                std::cerr << "Warning: Invalid top-k value, using default (5)" << std::endl;
+                args.top_k = 5;
+            }
         } else {
             std::cerr << "Unknown argument or missing value: " << arg << std::endl;
         }
